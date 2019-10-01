@@ -20,6 +20,7 @@ class Admin extends CI_Controller {
     }
 
     function manage_user(){
+        #AUTOMATION
         $crud = new grocery_CRUD();
         $crud->set_theme('tablestrap');
         $crud->set_table('msusr');
@@ -39,13 +40,19 @@ class Admin extends CI_Controller {
 
         $output = $crud->render();
 
+        #ADD DETAIL FUNCTION
+        $data = [
+            'title_page' => ' Manage User',
+            'kode_page' => 'manage_user'
+        ];
+        $output->data = $data;
         $this->_example_output($output);
 
     }
 
     public function _example_output($output = null)
 	{
-		$this->load->view('example.php',(array)$output);
+		$this->load->view('template/template.php',(array)$output);
 	}
 
 }

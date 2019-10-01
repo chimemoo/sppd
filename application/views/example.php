@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<title><?php echo $data['title_page']; ?></title>
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
   	<!-- Font Awesome -->
@@ -25,9 +25,9 @@
 		<!-- Logo -->
 		<a href="index2.html" class="logo">
 			<!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><b>S</b></span>
+			<span class="logo-mini"><img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:50px;"/></span>
 			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b><img src="<?php echo base_url();?>assets/image/logo/pertamina.png"/></b></span>
+			<span class="logo-lg"><b><img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:60px;"/></b></span>
 		</a>
 		<nav class="navbar navbar-static-top">
 			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
