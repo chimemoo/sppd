@@ -3,28 +3,106 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php 
-foreach($css_files as $file): ?>
-	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-<?php endforeach; ?>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  	<!-- Font Awesome -->
+  	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+  	<!-- Ionicons -->
+  	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+  	<!-- Theme style -->
+  	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/dist/css/AdminLTE.min.css">
+  	<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/dist/css/skins/_all-skins.min.css">	
+	<?php 
+		foreach($css_files as $file): ?>
+			<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+	<?php endforeach; ?>
 </head>
-<body>
-	<div>
-		<a href='<?php echo site_url('examples/customers_management')?>'>Customers</a> |
-		<a href='<?php echo site_url('examples/orders_management')?>'>Orders</a> |
-		<a href='<?php echo site_url('examples/products_management')?>'>Products</a> |
-		<a href='<?php echo site_url('examples/offices_management')?>'>Offices</a> | 
-		<a href='<?php echo site_url('examples/employees_management')?>'>Employees</a> |		 
-		<a href='<?php echo site_url('examples/film_management')?>'>Films</a> |
-		<a href='<?php echo site_url('examples/multigrids')?>'>Multigrid [BETA]</a>
-		
+<body class="hold-transition skin-blue sidebar-mini">
+	<header class="main-header">
+		<!-- Logo -->
+		<a href="index2.html" class="logo">
+			<!-- mini logo for sidebar mini 50x50 pixels -->
+			<span class="logo-mini"><b>S</b></span>
+			<!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><b>SPPD</b></span>
+		</a>
+		<nav class="navbar navbar-static-top">
+			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        		<span class="sr-only">Toggle navigation</span>
+      		</a>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<aside class="main-sidebar">
+	<section class="sidebar">
+			<ul class="sidebar-menu" data-widget="tree">
+				<li class="header">MAIN NAVIGATION</li>
+				<li class="treeview">
+					<a href="">
+						<i class="fa fa-dashboard"></i><span>Dashboard</span>
+						<span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+						</span>
+					</a>
+					<ul class="treeview-menu">
+						<li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+						<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</aside>
+
+	<div class="content-wrapper">
+		<section class="content-header">
+			<h1>
+				Dashboard
+				<small>Control panel</small>
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+				<li class="active">Dashboard</li>
+			</ol>
+		</section>	
+		<section class="content">
+			<div class="row">
+				<div class="col-sm-12">
+					<div style="padding: 10px">
+						<?php echo $output; ?>
+					</div>	
+				</div>
+			</div>
+		</section>
 	</div>
-	<div style='height:20px;'></div>  
-    <div style="padding: 10px">
-		<?php echo $output; ?>
-    </div>
+    
+	<footer class="main-footer">
+		<div class="pull-right hidden-xs">
+		<b>Version</b> 2.4.18
+		</div>
+		<strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+		reserved.
+	</footer>
+	
     <?php foreach($js_files as $file): ?>
         <script src="<?php echo $file; ?>"></script>
-    <?php endforeach; ?>
+	<?php endforeach; ?>
+	
+	<!-- Bootstrap 3.3.7 -->
+	<script src="<?php echo base_url();?>assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Slimscroll -->
+	<script src="<?php echo base_url();?>assets/adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- FastClick -->
+	<script src="<?php echo base_url();?>assets/adminlte/bower_components/fastclick/lib/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="<?php echo base_url();?>assets/adminlte/dist/js/adminlte.min.js"></script>
 </body>
 </html>
