@@ -20,7 +20,7 @@
 			<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
 </head>
-<body class="hold-transition skin-white sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 	<header class="main-header">
 		<!-- Logo -->
 		<a href="index2.html" class="logo">
