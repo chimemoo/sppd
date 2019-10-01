@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
   	<!-- Font Awesome -->
@@ -14,8 +14,8 @@
   	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/dist/css/AdminLTE.min.css">
   	<!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/dist/css/skins/_all-skins.min.css">	
-	<?php 
+  	<link rel="stylesheet" href="<?php echo base_url();?>assets/adminlte/dist/css/skins/_all-skins.min.css">
+	<?php
 		foreach($css_files as $file): ?>
 			<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
@@ -27,7 +27,7 @@
 			<!-- mini logo for sidebar mini 50x50 pixels -->
 			<span class="logo-mini"><b>S</b></span>
 			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b>SPPD</b></span>
+			<span class="logo-lg"><b><img src="<?php echo base_url();?>assets/image/logo/pertamina.png"/></b></span>
 		</a>
 		<nav class="navbar navbar-static-top">
 			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -71,18 +71,18 @@
 				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 				<li class="active">Dashboard</li>
 			</ol>
-		</section>	
+		</section>
 		<section class="content">
 			<div class="row">
 				<div class="col-sm-12">
 					<div style="padding: 10px">
 						<?php echo $output; ?>
-					</div>	
+					</div>
 				</div>
 			</div>
 		</section>
 	</div>
-    
+
 	<footer class="main-footer">
 		<div class="pull-right hidden-xs">
 		<b>Version</b> 2.4.18
@@ -90,11 +90,11 @@
 		<strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
 		reserved.
 	</footer>
-	
+
     <?php foreach($js_files as $file): ?>
         <script src="<?php echo $file; ?>"></script>
 	<?php endforeach; ?>
-	
+
 	<!-- Bootstrap 3.3.7 -->
 	<script src="<?php echo base_url();?>assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
