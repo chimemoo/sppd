@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -13,10 +13,10 @@ class Admin extends CI_Controller {
 
 		$this->load->library('grocery_CRUD');
     }
-    
+
     public function index()
     {
-        
+
     }
 
     function manage_user(){
