@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
 
         #ADD DETAIL FUNCTION
         $data = [
-            'title_page' => 'Manage User',
+            'title_page' => 'PertaminaEP | Manage User',
             'kode_page' => 'manage_user'
         ];
         $output->data = $data;
