@@ -42,12 +42,40 @@ class Admin extends CI_Controller {
 
         #ADD DETAIL FUNCTION
         $data = [
-            'title_page' => ' Manage User',
+            'title_page' => 'Manage User',
             'kode_page' => 'manage_user'
         ];
         $output->data = $data;
         $this->_example_output($output);
 
+    }
+
+    function manage_worker(){
+        $crud = new grocery_CRUD();
+        $crud->set_theme('tablestrap');
+        $crud->set_table('mswrk');
+        $crud->columns('nmwrkmswrk','fcwrkmswrk','glwrkmswrk','rtwrkmswrk','tlwrkmswrk');
+        $crud->display_as('nmwrkmswrk','Nama Worker')
+                ->display_as('fcwrkmswrk','Function')
+                ->display_as('glwrkmswrk','Golongan')
+                ->display_as('rtwrkmswrk','Rate')
+                ->display_as('hpwrkmswrk','No. Hp')
+                ->display_as('alwrkmswrk','Alamat')
+                ->display_as('tlwrkmswrk','Tanggal Lahir');
+        $crud->set_subject('Worker');
+        $crud->set_relation('fcwrkmswrk','msfnc','nmfncmsfnc');
+        $crud->set_relation('glwrkmswrk','msgol','nmgolmsgol');
+        $output = $crud->render();
+        $data = [
+            'title_page' => 'Manage Worker',
+            'kode_page' => 'manage_worker'
+        ];
+        $output->data = $data;
+        $this->_example_output($output);
+    }
+
+    function manage_vendor(){
+        //DATABASE BLM DIBIKIN!
     }
 
     public function _example_output($output = null)

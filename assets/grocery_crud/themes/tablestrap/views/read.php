@@ -1,9 +1,9 @@
 <?php $this->set_css($this->default_theme_path.'/tablestrap/css/bootstrap.min.css');?>
 <?php $this->set_css($this->default_theme_path.'/tablestrap/css/bootstrap-theme.min.css');?>
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-    	<h3 class="panel-title"><?php echo $this->l('list_record'); ?> <?php echo $subject?></h3>
+<div class="box box-primary">
+	<div class="box-header with-border">
+    	<h3 class="box-title"><?php echo $this->l('list_record'); ?> <?php echo $subject?></h3>
   	</div>
 
 	<!-- Start of hidden inputs -->
@@ -34,7 +34,7 @@
 		</table>
 	</div>
 	<div class="panel-footer">
-    	<a href="<?php echo $list_url?>" class="btn btn-default">
+    	<a href="<?php echo $list_url?>" class="btn bg-primary">
 			<?php echo $this->l('form_back_to_list'); ?>
 		</a>
   	</div>

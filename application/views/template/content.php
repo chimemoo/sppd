@@ -1,20 +1,22 @@
 <?php
-
-$menu = [
-    [
-        'hk' => 'hk_admin',
-        'md_user' => [
-            'title' => 'Master User/Worker/Vendor',
-            'ms_user'=>'Master User',
-            'ms_worker'=>'Master Worker',
-            'ms_vendor' => 'Master Vendor'
-        ],
-        'md_detail' => [
-            'ms_function'=>'Master Function',
-            'ms_golongan'=>'Master Golongan'
-        ]
-    ]
-];
+	//LIST OF MENU
+	$menu = [
+		0 => [
+			'hk' => 'hk_admin',
+			0 => [
+				'title' => 'Master User/Worker/Vendor',
+				'menu' => [
+					'manage_user'=>'Master User',
+					'manage_worker'=>'Master Worker',
+					'manage_vendor' => 'Master Vendor'
+				]
+			],
+			1 => [
+				'ms_function'=>'Master Function',
+				'ms_golongan'=>'Master Golongan'
+			]
+		]
+	];
 ?>
     <header class="main-header">
 		<!-- Logo -->
@@ -39,20 +41,28 @@ $menu = [
 	<aside class="main-sidebar">
 	<section class="sidebar">
 			<ul class="sidebar-menu" data-widget="tree">
-                <?php var_dump($menu); foreach($menu as $mn) { $i=0; if($mn[$i]['hk'] == 'hk_admin'){?>
-                    <li class="treeview">
-                        <a href="">
-                            <i class="fa fa-dashboard"></i><span><?php $mn[$i]['hk']['md_user']['title'];?></span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                        </ul>
-                    </li>
-                <?php }$i++; } ?>   
+				<?php
+					$i = 0;
+					foreach($menu as $mn){
+						if($mn['hk'] == 'hk_admin'){
+							?>
+								<li class="treeview">
+									<a href="">
+										<i class="fa fa-dashboard"></i><span><?php echo $mn[$i]['title'];?></span>
+										<span class="pull-right-container">
+											<i class="fa fa-angle-left pull-right"></i>
+										</span>
+									</a>
+									<ul class="treeview-menu">
+										<?php foreach($mn[$i]['menu'] as $key => $sm){ ?>
+											<li class="active"><a href="<?php echo base_url().'admin/'.$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
+										<?php } ?>
+									</ul>
+								</li>
+							<?php
+						} $i++;
+					}
+				?>  
 			</ul>
 		</section>
 	</aside>
