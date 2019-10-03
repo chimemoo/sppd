@@ -2,9 +2,9 @@
 	//LIST OF MENU
 	$menu = [
 		0 => [
-			'hk' => 'hk_admin',
+			'hk' => 'admin',
 			0 => [
-				'title' => 'Master User/Worker/Vendor',
+				'title' => 'Management Partisipant',
 				'menu' => [
 					'manage_user'=>'Master User',
 					'manage_worker'=>'Master Worker',
@@ -43,10 +43,10 @@
 			<ul class="sidebar-menu" data-widget="tree">
 				<?php
 					$i = 0;
-					foreach($menu as $mn){
-						if($mn['hk'] == 'hk_admin'){
+					foreach($menu as $k => $mn){
+						if($mn['hk'] == 'admin'){
 							?>
-								<li class="treeview">
+								<li class="treeview <?php if($this->uri->segment(1) == $mn['hk'] ){echo 'active';} ?>">
 									<a href="">
 										<i class="fa fa-dashboard"></i><span><?php echo $mn[$i]['title'];?></span>
 										<span class="pull-right-container">
@@ -55,7 +55,7 @@
 									</a>
 									<ul class="treeview-menu">
 										<?php foreach($mn[$i]['menu'] as $key => $sm){ ?>
-											<li class="active"><a href="<?php echo base_url().'admin/'.$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
+											<li class="<?php if($this->uri->segment(2) == $key ){echo 'active';} ?>"><a href="<?php echo base_url().'admin/'.$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
 										<?php } ?>
 									</ul>
 								</li>

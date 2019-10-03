@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
 
         #ADD DETAIL FUNCTION
         $data = [
-            'title_page' => 'PertaminaEP | Manage User',
+            'title_page' => 'PertaminaEP | Master User',
             'kode_page' => 'manage_user'
         ];
         $output->data = $data;
@@ -67,7 +67,7 @@ class Admin extends CI_Controller {
         $crud->set_relation('glwrkmswrk','msgol','nmgolmsgol');
         $output = $crud->render();
         $data = [
-            'title_page' => 'Manage Worker',
+            'title_page' => 'PertaminaEP | Master Worker',
             'kode_page' => 'manage_worker'
         ];
         $output->data = $data;
@@ -76,6 +76,22 @@ class Admin extends CI_Controller {
 
     function manage_vendor(){
         //DATABASE BLM DIBIKIN!
+        $crud = new grocery_CRUD();
+        $crud->set_theme('tablestrap');
+        $crud->set_table('msvdr');
+        $crud->columns('nmvdrmsvdr','lcvdrmsvdr','hpvdrmsvdr','emvdrmsvdr');
+        $crud->display_as('nmvdrmsvdr','Nama Vendor')
+                ->display_as('lcvdrmsvdr','Location')
+                ->display_as('dcvdrmsvdr','Description')
+                ->display_as('hpvdrmsvdr','No Handphone')
+                ->display_as('emvdrmsvdr','Email');
+        $output = $crud->render();
+        $data = [
+            'title_page' => 'PertaminaEP | Master Vendor',
+            'kode_page' => 'manage_vendor'
+        ];
+        $output->data = $data;
+        $this->_example_output($output);
     }
 
     public function _example_output($output = null)
