@@ -12,6 +12,14 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 
 		$this->load->library('grocery_CRUD');
+
+        if($this->session->userdata('role') == 'admin' || 'superadmin'){ 
+        }elseif ($this->session->userdata('role') == '') {
+            redirect('auth/login'); 
+        }else{
+             redirect('auth/login'); 
+        }
+
     }
 
     public function index()

@@ -5,7 +5,7 @@ if($this->session->flashdata('message')){ // Jika ada
 }
 ?>
 
-    <form action="<?php echo base_url('index.php/user/login'); ?>" method="post">
+    <form action="<?php echo base_url('index.php/auth/login'); ?>" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Username" name="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
