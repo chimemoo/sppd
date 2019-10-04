@@ -108,13 +108,35 @@
 	<div class="content-wrapper">
 		<section class="content-header">
 			<h1>
-				Dashboard
-				<small>Control panel</small>
+				<?php
+					$no = 0;
+					foreach($menu['admin'] as $key => $mm){
+						
+						if($this->uri->segment(2) == $mm[$no]['code']){
+							echo $mm[$no]['title'];
+						}
+						$no++;
+						
+					} 
+				?>
+				<small>
+					<?php
+						$no = 0;
+						foreach($menu['admin'] as $key => $mm){
+							
+							if($this->uri->segment(2) == $mm[$no]['code']){
+								foreach($mm[$no]['menu'] as $k => $sm){
+									if($this->uri->uri_string() == $k){
+										echo $sm;
+									}
+								}
+							}
+							$no++;
+							
+						} 
+					?>
+				</small>
 			</h1>
-			<ol class="breadcrumb">
-				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active">Dashboard</li>
-			</ol>
 		</section>
 		<section class="content">
 			<div class="row">

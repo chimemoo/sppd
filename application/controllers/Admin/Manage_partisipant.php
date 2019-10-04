@@ -47,7 +47,7 @@ class Manage_partisipant extends CI_Controller {
         $crud->set_subject('User');
         $crud->set_relation('fcusrmsusr','msfnc','nmfncmsfnc');
         $crud->set_relation('ldusrmsusr','msusr','nmusrmsusr', array('lvusrmsusr' => 'leader'));
-
+        $crud->unique_fields(array('unusrmsusr','emusrmsusr'));
         $output = $crud->render();
 
         #ADD DETAIL FUNCTION
