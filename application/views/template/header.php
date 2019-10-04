@@ -20,4 +20,4 @@
 			<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
 </head>
-<body class="hold-transition skin-black sidebar-mini">
+<body class="hold-transition skin-black fixed sidebar-mini">
