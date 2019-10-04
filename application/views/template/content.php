@@ -1,22 +1,30 @@
 <?php
 	//LIST OF MENU
+	//CHECK ROUTING
 	$menu = [
-		0 => [
-			'hk' => 'admin',
-			0 => [
-				'title' => 'Management Partisipant',
-				'menu' => [
-					'manage_user'=>'Master User',
-					'manage_worker'=>'Master Worker',
-					'manage_vendor' => 'Master Vendor'
+		'admin' => [
+			'menu'=>[
+				[
+					'code' => 'manage_partisipant',
+					'title' => 'Management Partisipant',
+					'menu' => [
+						'admin/manage_partisipant/manage_user'=>'Master User',
+						'admin/manage_partisipant/manage_worker'=>'Master Worker',
+						'admin/manage_partisipant/manage_vendor' => 'Master Vendor'
+					]
+				],
+				[
+					'code' => 'manage_information',
+					'title' => 'Management Information',
+					'menu' => [
+						'admin/manage_information/manage_function'=>'Master Function',
+						'admin/manage_information/manage_golongan'=>'Master Golongan'
+					]
 				]
-			],
-			1 => [
-				'ms_function'=>'Master Function',
-				'ms_golongan'=>'Master Golongan'
 			]
 		]
 	];
+	
 ?>
     <header class="main-header">
 		<!-- Logo -->
@@ -42,27 +50,26 @@
 	<section class="sidebar">
 			<ul class="sidebar-menu" data-widget="tree">
 				<?php
-					$i = 0;
-					foreach($menu as $k => $mn){
-						if($mn['hk'] == 'admin'){
-							?>
-								<li class="treeview <?php if($this->uri->segment(1) == $mn['hk'] ){echo 'active';} ?>">
-									<a href="">
-										<i class="fa fa-dashboard"></i><span><?php echo $mn[$i]['title'];?></span>
-										<span class="pull-right-container">
-											<i class="fa fa-angle-left pull-right"></i>
-										</span>
-									</a>
-									<ul class="treeview-menu">
-										<?php foreach($mn[$i]['menu'] as $key => $sm){ ?>
-											<li class="<?php if($this->uri->segment(2) == $key ){echo 'active';} ?>"><a href="<?php echo base_url().'admin/'.$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
-										<?php } ?>
-									</ul>
-								</li>
-							<?php
-						} $i++;
+					foreach($menu['admin']['menu'] as $mn){
+						?>
+							<li class="treeview <?php if($this->uri->segment(2) == $mn['code'] ){echo 'active';} ?>">
+								<a href="">
+									<i class="fa fa-dashboard"></i><span><?php echo $mn['title'];?></span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-left pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+									<?php foreach($mn['menu'] as $key => $sm){ ?>
+										<li class="<?php if($this->uri->uri_string() == $key ){echo 'active';} ?>"><a href="<?php echo base_url().$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
+									<?php } ?>
+								</ul>
+							</li>
+						<?php
 					}
-				?>  
+				?>
+
+				
 			</ul>
 		</section>
 	</aside>

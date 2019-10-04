@@ -4,20 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends MY_Controller {
   
-    public function __construct()
+  public function __construct()
 	{
 		parent::__construct();
 
-        $this->load->model('UserModel');
-		$this->load->database();
-		$this->load->helper('url');
+      $this->load->model('UserModel');
+		  $this->load->database();
+		  $this->load->helper('url');
     }
 
     public function index(){
-        if($this->session->userdata('authenticated')) // Jika user sudah login (Session authenticated ditemukan)
-          redirect('admin/manage_user'); // Redirect ke page home
-        // function render_login tersebut dari file core/MY_Controller.php
-        $this->render_login('auth/login'); // Load view login.php
+      if($this->session->userdata('authenticated')) // Jika user sudah login (Session authenticated ditemukan)
+        redirect('admin/manage_user'); // Redirect ke page home
+      // function render_login tersebut dari file core/MY_Controller.php
+      $this->render_login('auth/login'); // Load view login.php
     }
 
     function login(){
