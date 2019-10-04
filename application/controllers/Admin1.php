@@ -14,7 +14,9 @@ class Admin extends CI_Controller {
 		$this->load->library('grocery_CRUD');
 
         if($this->session->userdata('role') == 'admin' || 'superadmin'){ 
-        }elseif ($this->session->userdata('role') == '') {
+        
+        }
+        elseif ($this->session->userdata('role') == '') {
             redirect('auth/login'); 
         }else{
              redirect('auth/login'); 
