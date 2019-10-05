@@ -47,7 +47,15 @@ class Manage_partisipant extends CI_Controller {
         $crud->set_subject('User');
         $crud->set_relation('fcusrmsusr','msfnc','nmfncmsfnc');
         $crud->set_relation('ldusrmsusr','msusr','nmusrmsusr', array('lvusrmsusr' => 'leader'));
-        $crud->unique_fields(array('unusrmsusr','emusrmsusr'));
+        $crud->set_rules('unusrmsusr','Username','required|is_unique[msusr.unusrmsusr]',array('is_unique' => 'The username is already exist'));
+        $crud->set_rules('pwusrmsusr','Password','required');
+        $crud->set_rules('nmusrmsusr','Nama lengkap','required');
+        $crud->set_rules('lvusrmsusr','Level','required');
+        $crud->set_rules('emusrmsusr','Email','valid_email');
+        $crud->set_rules('hpusrmsusr','Nomor Hp','numeric');
+        $crud->unique_fields(array('emusrmsusr'));
+        $crud->change_field_type('pwusrmsusr','password')
+            ->callback_before_insert(array($this,'encrypt_password_callback'));
         $output = $crud->render();
 
         #ADD DETAIL FUNCTION
@@ -58,6 +66,12 @@ class Manage_partisipant extends CI_Controller {
         $output->data = $data;
         $this->_example_output($output);
 
+    }
+
+    function encrypt_password_callback($post_array, $primary_key = null)
+    {
+        $post_array['pwusrmsusr'] = md5($post_array['pwusrmsusr']);
+        return $post_array;
     }
 
     function manage_worker(){
