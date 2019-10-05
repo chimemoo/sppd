@@ -14,9 +14,7 @@ class Auth extends MY_Controller {
     }
 
     public function index(){
-      if($this->session->userdata('authenticated')) // Jika user sudah login (Session authenticated ditemukan)
-        redirect('admin/manage_user'); // Redirect ke page home
-      // function render_login tersebut dari file core/MY_Controller.php
+     // function render_login tersebut dari file core/MY_Controller.php
       $this->render_login('auth/login'); // Load view login.php
     }
 
@@ -37,10 +35,10 @@ class Auth extends MY_Controller {
                 'role'=>$user->lvusrmsusr // Buat session role
               );
               $this->session->set_userdata($session); // Buat session sesuai $session
-              if ($this->session->userdata('role') == 'admin') {
-                redirect('admin/manage_user'); // Redirect ke halaman home
-              }else if ($this->session->userdata('role') == 'superadmin') {
-                redirect('admin/manage_worker'); // Redirect ke halaman home
+              if ($this->session->userdata('role') == 'superadmin') {
+                redirect('admin/manage_partisipant/manage_user'); // Redirect ke halaman home
+              }else if ($this->session->userdata('role') == 'admin') {
+                redirect('admin/manage_partisipant/manage_worker'); // Redirect ke halaman home
               }
             }else{
               $this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata

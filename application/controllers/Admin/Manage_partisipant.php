@@ -7,22 +7,25 @@ class Manage_partisipant extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
+        $this->authenticated();
 
 		$this->load->database();
 		$this->load->helper('url');
 
 		$this->load->library('grocery_CRUD');
 
-        if($this->session->userdata('role') == 'admin' || 'superadmin'){ 
-        
-        }
-        elseif ($this->session->userdata('role') == '') {
-            redirect('auth/login'); 
-        }else{
-             redirect('auth/login'); 
-        }
-
     }
+
+    public function authenticated(){ // Fungsi ini berguna untuk mengecek apakah user sudah login atau belum
+        // Pertama kita cek dulu apakah controller saat ini yang sedang diakses user adalah controller Auth apa bukan
+        // Karena fungsi cek login hanya kita berlakukan untuk controller selain controller Auth
+        if($this->uri->segment(1) != 'auth' && $this->uri->segment(1) != ''){
+            // Cek apakah terdapat session dengan nama authenticated
+            if( ! $this->session->userdata('authenticated')) // Jika tidak ada / artinya belum login
+                redirect('auth'); // Redirect ke halaman login
+        }
+    }
+
 
     public function index()
     {
@@ -30,6 +33,8 @@ class Manage_partisipant extends CI_Controller {
     }
 
     function manage_user(){
+        if(! ($this->session->userdata('role') == 'superadmin'))
+            redirect('auth');
         #AUTOMATION
         $crud = new grocery_CRUD();
         $crud->set_theme('tablestrap');
@@ -75,6 +80,8 @@ class Manage_partisipant extends CI_Controller {
     }
 
     function manage_worker(){
+        if(! ($this->session->userdata('role') == 'admin'))
+            redirect('auth');
         $crud = new grocery_CRUD();
         $crud->set_theme('tablestrap');
         $crud->set_table('mswrk');
