@@ -59,7 +59,6 @@ class Manage_partisipant extends CI_Controller {
         $crud->set_rules('emusrmsusr','Email','valid_email');
         $crud->set_rules('hpusrmsusr','Nomor Hp','numeric');
         $crud->unique_fields(array('emusrmsusr'));
-        $crud->field_type('lvusrmsusr','dropdown', array('admin'=>'admin','leader'=>'leader','watcher'=>'watcher'));
         $crud->change_field_type('pwusrmsusr','password')
             ->callback_before_insert(array($this,'encrypt_password_callback'));
         $output = $crud->render();

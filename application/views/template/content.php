@@ -43,15 +43,15 @@
 					<li class="dropdown user user-menu">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="<?php echo base_url(); ?>assets/image/icon/icon.png" class="user-image" alt="User Image">
-								<span class="hidden-xs">Alexander Pierce</span>
+								<span class="hidden-xs"><?php echo $this->session->username; ?></span>
 						</a>
 						<ul class="dropdown-menu">
 							<!-- User image -->
 							<li class="user-header">
 								<img src="<?php echo base_url(); ?>assets/image/icon/icon.png" class="img-circle" alt="User Image">
 								<p>
-									Admin
-									<small>Admin</small>
+									<?php echo $this->session->username; ?>
+									<small><?php echo $this->session->role; ?></small>
 								</p>
 							</li>
 							<!-- Menu Body -->
