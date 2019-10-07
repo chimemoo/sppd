@@ -8,6 +8,28 @@
 					'code' => 'manage_partisipant',
 					'title' => 'Management Partisipant',
 					'menu' => [
+						'admin/manage_partisipant/manage_worker'=>'Master Worker',
+						'admin/manage_partisipant/manage_vendor' => 'Master Vendor'
+					]
+				],
+				[
+					'code' => 'manage_information',
+					'title' => 'Management Information',
+					'menu' => [
+						'admin/manage_information/manage_function'=>'Master Function',
+						'admin/manage_information/manage_golongan'=>'Master Golongan'
+					]
+				]
+			]
+		],
+
+
+		'superadmin' => [
+			'menu'=>[
+				[
+					'code' => 'manage_partisipant',
+					'title' => 'Management Partisipant',
+					'menu' => [
 						'admin/manage_partisipant/manage_user'=>'Master User',
 						'admin/manage_partisipant/manage_worker'=>'Master Worker',
 						'admin/manage_partisipant/manage_vendor' => 'Master Vendor'
@@ -81,7 +103,10 @@
 		<section class="sidebar">
 			<ul class="sidebar-menu" data-widget="tree">
 				<?php
-					foreach($menu['admin']['menu'] as $mn){
+
+				if($this->session->userdata('role') == 'superadmin'){
+
+					foreach($menu['superadmin']['menu'] as $mn){
 						?>
 							<li class="treeview <?php if($this->uri->segment(2) == $mn['code'] ){echo 'active';} ?>">
 								<a href="">
@@ -98,6 +123,26 @@
 							</li>
 						<?php
 					}
+				}else if ($this->session->userdata('role') == 'admin') {
+					foreach($menu['admin']['menu'] as $mn){
+						?>
+						<li class="treeview <?php if($this->uri->segment(2) == $mn['code'] ){echo 'active';} ?>">
+							<a href="">
+								<i class="fa fa-dashboard"></i><span><?php echo $mn['title'];?></span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<?php foreach($mn['menu'] as $key => $sm){ ?>
+									<li class="<?php if($this->uri->uri_string() == $key ){echo 'active';} ?>"><a href="<?php echo base_url().$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
+								<?php } ?>
+							</ul>
+						</li>
+					</ul>
+				<?php
+					}
+				}
 				?>
 
 				
