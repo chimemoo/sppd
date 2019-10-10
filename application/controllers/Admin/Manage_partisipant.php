@@ -33,7 +33,7 @@ class Manage_partisipant extends CI_Controller {
     }
 
     function manage_user(){
-        if(! ($this->session->userdata('role') == 'superadmin'))
+        if(! ($this->session->userdata('role') == 'admin'))
             redirect('auth');
         #AUTOMATION
         $crud = new grocery_CRUD();
@@ -81,7 +81,7 @@ class Manage_partisipant extends CI_Controller {
     }
 
     function manage_worker(){
-        if(! ($this->session->userdata('role') == 'admin' || 'superadmin'))
+        if(! ($this->session->userdata('role') == 'admin' ))
             redirect('auth');
         $crud = new grocery_CRUD();
         $crud->set_theme('tablestrap');
@@ -107,7 +107,7 @@ class Manage_partisipant extends CI_Controller {
     }
 
     function manage_vendor(){
-        if(! ($this->session->userdata('role') == 'admin' || 'superadmin'))
+        if(! ($this->session->userdata('role') == 'admin'))
             redirect('auth');
         //DATABASE BLM DIBIKIN!
         $crud = new grocery_CRUD();

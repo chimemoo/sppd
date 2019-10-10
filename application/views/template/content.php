@@ -30,17 +30,17 @@
 					'code' => 'manage_partisipant',
 					'title' => 'Management Partisipant',
 					'menu' => [
-						'admin/manage_partisipant/manage_user'=>'Master User',
-						'admin/manage_partisipant/manage_worker'=>'Master Worker',
-						'admin/manage_partisipant/manage_vendor' => 'Master Vendor'
+						'superadmin/manage_partisipant/manage_user'=>'Master User',
+						'superadmin/manage_partisipant/manage_worker'=>'Master Worker',
+						'superadmin/manage_partisipant/manage_vendor' => 'Master Vendor'
 					]
 				],
 				[
 					'code' => 'manage_information',
 					'title' => 'Management Information',
 					'menu' => [
-						'admin/manage_information/manage_function'=>'Master Function',
-						'admin/manage_information/manage_golongan'=>'Master Golongan'
+						'superadmin/manage_information/manage_function'=>'Master Function',
+						'superadmin/manage_information/manage_golongan'=>'Master Golongan'
 					]
 				]
 			]
