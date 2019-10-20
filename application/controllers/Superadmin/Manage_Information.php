@@ -61,6 +61,8 @@ class Manage_information extends CI_Controller {
         $this->_example_output($output);
     }
 
+    
+
     public function _example_output($output = null)
 	{
 		$this->load->view('template/template.php',(array)$output);

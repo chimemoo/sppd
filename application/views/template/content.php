@@ -17,7 +17,8 @@
 					'title' => 'Management Information',
 					'menu' => [
 						'admin/manage_information/manage_function'=>'Master Function',
-						'admin/manage_information/manage_golongan'=>'Master Golongan'
+						'admin/manage_information/manage_golongan'=>'Master Golongan',
+						'admin/manage_information/manage_tarif'=>'Master Tarif'
 					]
 				]
 			]
@@ -139,7 +140,7 @@
 								<?php } ?>
 							</ul>
 						</li>
-					</ul>
+					
 				<?php
 					}
 				}
