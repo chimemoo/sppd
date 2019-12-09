@@ -157,6 +157,25 @@
 					
 				<?php
 					}
+				}else if ($this->session->userdata('role') == 'watcher') {
+					foreach($menu['watcher']['menu'] as $mn){
+						?>
+						<li class="treeview <?php if($this->uri->segment(2) == $mn['code'] ){echo 'active';} ?>">
+							<a href="">
+								<i class="fa fa-dashboard"></i><span><?php echo $mn['title'];?></span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<?php foreach($mn['menu'] as $key => $sm){ ?>
+									<li class="<?php if($this->uri->uri_string() == $key ){echo 'active';} ?>"><a href="<?php echo base_url().$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
+								<?php } ?>
+							</ul>
+						</li>
+					
+				<?php
+					}
 				}
 				?>
 
@@ -202,7 +221,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div style="padding: 10px">
-						<?php echo $output; ?>
+						<?php $this->load->view('page/watcher/create'); ?>
 					</div>
 				</div>
 			</div>
