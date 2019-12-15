@@ -67,9 +67,9 @@
 		<!-- Logo -->
 		<a href="index2.html" class="logo">
 			<!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:50px;"/></span>
+			<span class="logo-mini">SPPD</span>
 			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b><img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:60px;"/></b></span>
+			<span class="logo-lg">SPPD</b></span>
 		</a>
 		<nav class="navbar navbar-static-top">
 			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">

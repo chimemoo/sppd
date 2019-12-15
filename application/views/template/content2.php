@@ -65,12 +65,12 @@
 ?>
     <header class="main-header">
 		<!-- Logo -->
-		<a href="index2.html" class="logo">
-			<!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:50px;"/></span>
-			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b><img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:60px;"/></b></span>
-		</a>
+		<a href="" class="logo">
+	      <!-- mini logo for sidebar mini 50x50 pixels -->
+	      <span class="logo-mini"><b>S</b>PPD</span>
+	      <!-- logo for regular state and mobile devices -->
+	      <span class="logo-lg"><b>SPPD</b> PERTAMINA</span>
+	    </a>
 		<nav class="navbar navbar-static-top">
 			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         		<span class="sr-only">Toggle navigation</span>
