@@ -45,6 +45,8 @@ class Manage_sppd extends CI_Controller {
             $pisah = explode('-',$date);
             $start_date = $pisah[0];
             $end_date = $pisah[1];
+            $start_date = date("Y-m-d H:i:s", strtotime($start_date));
+            $end_date = date("Y-m-d H:i:s", strtotime($end_date));
         }
 
         //MENDAPATKAN WORKER
