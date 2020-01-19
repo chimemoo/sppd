@@ -36,17 +36,26 @@
 </script>
     <!-- jQuery UI -->
      <script type="text/javascript">
-        $(document).ready(function(){
-            $( "#search_worker" ).autocomplete({
-              source: "<?php echo site_url('watcher/manage_sppd/get_worker/?');?>"
-            });
-            $( "#search_function" ).autocomplete({
-              source: "<?php echo site_url('watcher/manage_sppd/get_function/?');?>"
-            });
-            $( "#search_vendor" ).autocomplete({
-              source: "<?php echo site_url('watcher/manage_sppd/get_vendor/?');?>"
-            });
+
+     
+        
+      $(document).ready(function(){
+        $date = "01/04/2020 12:00 AM - 01/04/2020 11:59 PM";
+        // $('#search_worker').on('keyup', function() {
+        //   global $date;
+        //   date = $('#reservationtime').val();
+        //       console.log(date);
+        // });
+        $( "#search_worker").autocomplete({
+          source: "<?php echo site_url('watcher/manage_sppd/get_worker/?date=');?>"+$('#reservationtime').val()
         });
+        $( "#search_function" ).autocomplete({
+          source: "<?php echo site_url('watcher/manage_sppd/get_function/?');?>"
+        });
+        $( "#search_vendor" ).autocomplete({
+          source: "<?php echo site_url('watcher/manage_sppd/get_vendor/?');?>"
+        });
+      });
     </script>
 </body>
 </html>

@@ -39,14 +39,35 @@ class Manage_sppd extends CI_Controller {
     }
 
     function get_worker(){
+        // MEMISAH TANGGAL
+        if (isset($_GET['date'])) {
+            $date = $_GET['date'];
+            $pisah = explode('-',$date);
+            $start_date = $pisah[0];
+            $end_date = $pisah[1];
+        }
+
+        //MENDAPATKAN WORKER
         if (isset($_GET['term'])) {
-            $result = $this->usermodel->search_worker($_GET['term']);
-            if (count($result) > 0) {
-            foreach ($result as $row)
-                $arr_result[] = $row->nmwrkmswrk;
-                echo json_encode($arr_result);
+            $worker_in_mswrk = $this->usermodel->search_worker($_GET['term']); // Mencari worker pada mswrk
+            if (count($worker_in_mswrk) > 0) {
+                //$sppd_that_accepted = $this->usermodel->filter_sppd($worker_in_mswrk); //Mencari sppd yang diterima dan nama workernya sama
+                foreach ($worker_in_mswrk as $row){
+                    $arr_result[] = $row->nmwrkmswrk;
+                    $id_result[]  = $row->idwrkmswrk;
+                }
             }
         }
+        $no = 0;
+        foreach ($id_result as $nr){
+            if($this->usermodel->filter_sppd($nr,$start_date, $end_date)){
+                $w_result[] = $arr_result[$no];
+            }
+            $no++;
+        }
+
+
+        echo json_encode($w_result);
     }
 
     function get_function(){
@@ -78,6 +99,12 @@ class Manage_sppd extends CI_Controller {
     public function _example_output($output = null)
     {
         $this->load->view('template/template.php',(array)$output);
+    }
+
+    function add_sppd(){
+        $data = [
+            'nmspd' => $this->input->post('worker')
+        ];
     }
 
 }

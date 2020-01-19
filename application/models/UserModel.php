@@ -15,11 +15,27 @@ class UserModel extends CI_Model {
 		return $query;
     }
 
+    function add_sppd($data){
+        return $this->db->insert('msspd',$data);
+    }
+
     function search_worker($title){
+
         $this->db->like('nmwrkmswrk', $title , 'both');
         $this->db->limit(10);
         return $this->db->get('mswrk')->result();
     }
+
+    function filter_sppd($idworker,$startdate,$enddate){
+        $query = "select * from msspd where stspdmsspd='Sudah' AND idwrkmsspd = ".$idworker;
+        if($this->db->query($query)->num_rows() > 0){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
 
     function search_function($title){
         $this->db->like('nmfncmsfnc', $title , 'both');

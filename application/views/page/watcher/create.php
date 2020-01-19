@@ -19,45 +19,45 @@
                         <table class="table table-striped">
                             <tbody>
                                 <tr id="unusrmsusr_field_box">
-                                    <th>Name</th>
-                                    <td>
-                                        <input id="search_worker" name="search_worker" type="text" class="form-control" placeholder="Search" />
-                                    </td>
-                                </tr>
-                                <tr id="unusrmsusr_field_box">
-                                    <th>Vendor</th>
-                                    <td>
-                                        <input id="search_vendor" name="search_vendor" type="text" class="form-control" placeholder="Search" />
-                                    </td>
-                                </tr>
-                                <tr id="unusrmsusr_field_box">
-                                    <th>Function</th>
-                                    <td>
-                                        <input id="search_function" name="search_function" type="text" class="form-control" placeholder="Search" />
-                                    </td>
-                                </tr>
-                                <tr id="unusrmsusr_field_box">
-                                    <th>Reason</th>
-                                    <td>
-                                        <input class="form-control" name="name" type="text" value="" maxlength="45">
-                                    </td>
-                                </tr>
-                                <tr id="unusrmsusr_field_box">
                                     <th>Start - Finish</th>
                                     <td>
                                         <input type="text" class="form-control" id="reservationtime">
                                     </td>
                                 </tr>
                                 <tr id="unusrmsusr_field_box">
+                                    <th>Name</th>
+                                    <td>
+                                        <input id="search_worker" name="worker" type="text" class="form-control" placeholder="Search" onchange=/>
+                                    </td>
+                                </tr>
+                                <tr id="unusrmsusr_field_box">
+                                    <th>Vendor</th>
+                                    <td>
+                                        <input id="search_vendor" name="vendor" type="text" class="form-control" placeholder="Search" />
+                                    </td>
+                                </tr>
+                                <tr id="unusrmsusr_field_box">
+                                    <th>Function</th>
+                                    <td>
+                                        <input id="search_function" name="function" type="text" class="form-control" placeholder="Search" />
+                                    </td>
+                                </tr>
+                                <tr id="unusrmsusr_field_box">
+                                    <th>Reason</th>
+                                    <td>
+                                        <input class="form-control" name="reason" type="text" value="" maxlength="45">
+                                    </td>
+                                </tr>
+                                <tr id="unusrmsusr_field_box">
                                     <th>Tarif</th>
                                     <td>
-                                        <input class="form-control" name="name" type="text" value="" maxlength="45">
+                                        <input class="form-control" name="tarif" type="text" value="" maxlength="45">
                                     </td>
                                 </tr>
                                 <tr id="unusrmsusr_field_box">
                                     <th>Amount</th>
                                     <td>
-                                        <input class="form-control" name="name" type="text" value="" maxlength="45">
+                                        <input class="form-control" name="amount" type="text" value="" maxlength="45">
                                     </td>
                                 </tr>
                             </tbody>

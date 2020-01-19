@@ -18,14 +18,14 @@ class Search extends CI_Controller {
 
 
     public function search_worker(){
- 
+
         $term = $this->input->get('term');
+        $date = $this->input->get('date');
  
         $this->db->like('nmwrkmswrk', $term);
- 
+        
         $data = $this->db->get("mswrk")->result();
- 
-        echo json_encode($data);
+        echo json_encode($date);
     }
 
 
