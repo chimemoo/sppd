@@ -61,6 +61,18 @@
 			]
 		],
 
+		'leader' => [
+			'menu' => [
+				[
+					'code' => 'manage_sppd',
+					'title' => 'Management SPPD',
+					'menu' => [
+						'leader/manage_sppd/manage_sppd' => 'Master SPPD'
+					]
+				]
+			]
+		]
+
 	];
 	
 ?>
