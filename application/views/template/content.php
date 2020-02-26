@@ -41,7 +41,8 @@
 					'title' => 'Management Information',
 					'menu' => [
 						'superadmin/manage_information/manage_function'=>'Master Function',
-						'superadmin/manage_information/manage_golongan'=>'Master Golongan'
+						'superadmin/manage_information/manage_golongan'=>'Master Golongan',
+						'superadmin/manage_information/manage_tarif'=>'Master Tarif'
 					]
 				]
 			]

@@ -27,14 +27,14 @@ class UserModel extends CI_Model {
     }
 
     function filter_sppd($idworker,$startdate,$enddate){
-        $query = "select * from msspd where stspdmsspd='Sudah' AND idwrkmsspd = ".$idworker.
-                 " AND dsspdmsspd BETWEEN '".$startdate."' AND '".$enddate."'".
+        $query = "select * from msspd where stspdmsspd='Sudah' AND wkspdmsspd LIKE '%,".$idworker.
+                 "%' AND dsspdmsspd BETWEEN '".$startdate."' AND '".$enddate."'".
                  " OR dfspdmsspd BETWEEN '".$startdate."' AND '".$enddate."'";
         if($this->db->query($query)->num_rows() > 0){
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }
     

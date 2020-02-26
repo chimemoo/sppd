@@ -54,7 +54,7 @@
 					'title' => 'Management SPPD',
 					'menu' => [
 						'watcher/manage_sppd/create_sppd'=>'Buat SPPD',
-						'warcher/manage_sppd/list_sppd' => 'Daftar Pengajuan'
+						'watcher/manage_sppd/list_sppd' => 'Daftar Pengajuan'
 					]
 				]
 			]
@@ -221,7 +221,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div style="padding: 10px">
-						<?php $this->load->view('page/watcher/create'); ?>
+						<?php $this->load->view($view); ?>
 					</div>
 				</div>
 			</div>

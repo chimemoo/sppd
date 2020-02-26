@@ -20,7 +20,6 @@ class Search extends CI_Controller {
     public function search_worker(){
 
         $term = $this->input->get('term');
-        $date = $this->input->get('date');
  
         $this->db->like('nmwrkmswrk', $term);
         

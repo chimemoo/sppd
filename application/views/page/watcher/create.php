@@ -12,52 +12,46 @@
                         <h3 class="box-title">Tambah SPPD</h3>
                     </div>
 
-                    <form action="" method="post" id="crudForm" enctype="multipart/form-data" accept-charset="utf-8">
+                    <form method="post" id="crudForm" action="<?php echo base_url('Watcher/Manage_sppd/create_sppd_process'); ?>" enctype="multipart/form-data" accept-charset="utf-8">
                         <div id="report-error" class="report-div error"></div>
                         <div id="report-success" class="report-div success"></div>
 
                         <table class="table table-striped">
                             <tbody>
-                                <tr id="unusrmsusr_field_box">
-                                    <th>Start - Finish</th>
+                                <tr>
+                                    <th>Date Start</th>
                                     <td>
-                                        <input type="text" class="form-control" id="reservationtime">
+                                        <input type="datetime-local" class="form-control" name="dsspdmsspd">
                                     </td>
                                 </tr>
-                                <tr id="unusrmsusr_field_box">
+                                <tr>
+                                    <th>Date Finish</th>
+                                    <td>
+                                        <input type="datetime-local" class="form-control" name="dfspdmsspd">
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th>Name</th>
                                     <td>
-                                        <input id="search_worker" name="worker" type="text" class="form-control" placeholder="Search" onchange=/>
+                                        <input class="form-control" name="wkspdmsspd" id="cari-worker" placeholder="Cari nama">
                                     </td>
                                 </tr>
-                                <tr id="unusrmsusr_field_box">
+                                <tr>
                                     <th>Vendor</th>
                                     <td>
-                                        <input id="search_vendor" name="vendor" type="text" class="form-control" placeholder="Search" />
+                                        <input id="search_vendor" name="vdspdmsspd" type="text" class="form-control" placeholder="Search" />
                                     </td>
                                 </tr>
-                                <tr id="unusrmsusr_field_box">
+                                <tr>
                                     <th>Function</th>
                                     <td>
-                                        <input id="search_function" name="function" type="text" class="form-control" placeholder="Search" />
+                                        <input id="search_function" name="fcspdmsspd" type="text" class="form-control" placeholder="Search" />
                                     </td>
                                 </tr>
                                 <tr id="unusrmsusr_field_box">
                                     <th>Reason</th>
                                     <td>
-                                        <input class="form-control" name="reason" type="text" value="" maxlength="45">
-                                    </td>
-                                </tr>
-                                <tr id="unusrmsusr_field_box">
-                                    <th>Tarif</th>
-                                    <td>
-                                        <input class="form-control" name="tarif" type="text" value="" maxlength="45">
-                                    </td>
-                                </tr>
-                                <tr id="unusrmsusr_field_box">
-                                    <th>Amount</th>
-                                    <td>
-                                        <input class="form-control" name="amount" type="text" value="" maxlength="45">
+                                        <input class="form-control" name="rsspdmsspd" type="text" value="" maxlength="45">
                                     </td>
                                 </tr>
                             </tbody>
@@ -67,10 +61,8 @@
                                 <!-- End of hidden inputs -->
                         
                         <div class="box-footer">
-                            <input id="form-button-save" type="submit" value="Save" class="btn btn-success">
-                                            <input type="button" value="Save and go back to list" class="btn btn-success" id="save-and-go-back-button">
-                                <input type="button" value="Cancel" class="btn btn-warning" id="cancel-button">
-                                        <div class="small-loading" id="FormLoading">Loading, updating changes...</div>
+                            <input type="submit" value="Save" class="btn btn-success">
+                            <a class="btn btn-warning" id="cancel-button" href="<?php echo base_url('watcher/manage_sppd/list_sppd'); ?>">Cancel</a>
                         </div>
                     </form>
                 </div>

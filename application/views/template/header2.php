@@ -25,7 +25,5 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/grocery_crud/themes/tablestrap/css/pnotify.custom.min.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/grocery_crud/themes/tablestrap/css/datatables.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/grocery_crud/themes/tablestrap/extras/TableTools/media/css/TableTools.css" />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 </head>
 <body class="hold-transition skin-black fixed sidebar-mini">

@@ -61,6 +61,25 @@ class Manage_information extends CI_Controller {
         $this->_example_output($output);
     }
 
+    function manage_tarif(){
+        $crud = new grocery_CRUD();
+        $crud->set_theme('tablestrap');
+        $crud->set_table('mstrf');
+        $crud->columns('jktrfmstrf','tftrfmstrf','sttrfmstrf','dttrfmstrf');
+        $crud->display_as('jktrfmstrf','Jarak')
+        ->display_as('tftrfmstrf','Tarif')
+        ->display_as('sttrfmstrf','Kota Asal')
+        ->display_as('dttrfmstrf','Kota Tujuan');
+        $crud->set_subject('Tarif');
+        $output = $crud->render();
+        $data = [
+            'title_page' => 'PertaminaEP | Master Tarif',
+            'kode_page' => 'manage_tarif'
+        ];
+        $output->data = $data;
+        $this->_example_output($output);
+    }
+
     
 
     public function _example_output($output = null)
