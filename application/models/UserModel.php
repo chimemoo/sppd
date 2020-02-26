@@ -61,5 +61,4 @@ class UserModel extends CI_Model {
         return $this->db->get('msspd')->result_array();
     }
 
-    function
 }
