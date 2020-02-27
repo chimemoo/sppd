@@ -12,7 +12,7 @@
                         <h3 class="box-title">Approve SPPD</h3>
                     </div>
 
-                    <form method="post" id="crudForm" action="<?php echo base_url('Watcher/Manage_sppd/create_sppd_process'); ?>" enctype="multipart/form-data" accept-charset="utf-8">
+                    <form method="post" id="crudForm" action="<?php echo base_url('leader/manage_sppd/approve_process/').$idSppd; ?>" enctype="multipart/form-data" accept-charset="utf-8">
                         <div id="report-error" class="report-div error"></div>
                         <div id="report-success" class="report-div success"></div>
 
@@ -75,7 +75,15 @@
                                 <tr>
                                     <th>Tarif</th>
                                     <td>
-                                        <select name="tfspdmsspd" class="form-control"></select>
+                                        <select name="tfspdmssdp" class="form-control">
+                                            <?php
+                                                foreach ($tarif as $tf){
+                                            ?>
+                                                <option value="<?php echo $tf['idtrfmstrf'] ?>"><?php echo $tf['jktrfmstrf'].' Km - '.$tf['sttrfmstrf'].'-'.$tf['dttrfmstrf'].'(Rp.'.$tf['tftrfmstrf'].')'; ?></option>
+                                            <?php
+                                                }
+                                            ?>
+                                        </select>
                                     </td>
                                 </tr>
                                 <th>Amount</th>

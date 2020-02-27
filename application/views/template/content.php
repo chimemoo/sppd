@@ -67,6 +67,7 @@
 					'code' => 'manage_sppd',
 					'title' => 'Management SPPD',
 					'menu' => [
+						'leader/manage_sppd/manage_sppd' => 'Master SPPD',
 						'leader/manage_sppd/manage_sppd' => 'Master SPPD'
 					]
 				]
@@ -171,7 +172,26 @@
 				<?php
 					}
 				}
-				?>
+				elseif ($this->session->userdata('role') == 'leader') {
+				var_dump($menu);
+					foreach($menu['leader']['menu'] as $mn){
+						?>
+						<li class="treeview <?php if($this->uri->segment(2) == $mn['code'] ){echo 'active';} ?>">
+							<a href="">
+								<i class="fa fa-dashboard"></i><span><?php echo $mn['title'];?></span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<?php foreach($mn['menu'] as $key => $sm){ ?>
+									<li class="<?php if($this->uri->segment(2)== $key ){echo 'active';} ?>"><a href="<?php echo base_url().$key; ?>"><i class="fa fa-circle-o"></i> <?php echo $sm;?></a></li>
+								<?php } ?>
+							</ul>
+						</li>
+				<?php
+					}
+				} ?>
 
 				
 			</ul>

@@ -73,12 +73,25 @@ class Manage_sppd extends CI_Controller {
     function approve($id){
         $data = [
             'title_page' => 'PertaminaEP | SPPD',
-            'kode_page' => 'manage_sppd',
-            'view' => 'page/leader/approve_sppd'
+            'kode_page' => 'approve_sppd',
+            'view' => 'page/leader/approve_sppd',
+            'tarif' => $this->usermodel->getTarif(),
+            'idSppd' => $id
         ];
 
         $data['sppd_detail'] = $this->usermodel->sppdDetail($id);
         $this->load->view('template/template2',$data);
+    }
+
+    function approve_process($id){
+        $data = [
+            'tfspdmsspd' => $this->input->post('tfspdmssdp'),
+            'amspdmsspd' => $this->input->post('amspdmsspd'),
+            'stspdmsspd' => 'Sudah'
+        ];
+        if($this->usermodel->approve($data,$id)){
+            redirect(base_url('leader/manage_sppd/manage_sppd'));
+        }
     }
 
     public function _example_output($output = null)
