@@ -50,4 +50,27 @@ class UserModel extends CI_Model {
         $this->db->limit(10);
         return $this->db->get('msvdr')->result();
     }
+
+    function getWorker($id){
+        $this->db->where('idwrkmswrk', $id);
+        return $this->db->get('mswrk')->result_array();
+    }
+
+    function sppdDetail($id){
+        $this->db->where('nospdmsspd',$id);
+        return $this->db->get('msspd')->result_array();
+    }
+
+    function getTarif(){
+        return $this->db->get('mstrf')->result_array();
+    }
+
+    function approve($data,$id){
+        $this->db->set('tfspdmsspd', $data['tfspdmsspd']);
+        $this->db->set('amspdmsspd', $data['amspdmsspd']);
+        $this->db->set('stspdmsspd', $data['stspdmsspd']);
+        $this->db->where('nospdmsspd',$id);
+        return $this->db->update('msspd');
+    }
+
 }

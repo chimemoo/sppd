@@ -50,6 +50,10 @@ class Auth extends MY_Controller {
           {
             redirect('watcher/manage_sppd/create_sppd'); // Redirect ke halaman home
           }
+          else if ($this->session->userdata('role') == 'leader') 
+          {
+            redirect('leader/manage_sppd/manage_sppd'); // Redirect ke halaman home
+          }
         } 
         else 
         {

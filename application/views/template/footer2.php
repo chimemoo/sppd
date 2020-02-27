@@ -38,13 +38,15 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/cari/js/jquery.tokeninput.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/cari/css/token-input.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/cari/css/token-input-facebook.css" />
+<?php if($this->uri->segment(3) != 'watcher'){ ?>
 <script type="text/javascript">
-$(document).ready(function () {
-    $("#cari-worker").tokenInput("<?php echo site_url('watcher/manage_sppd/get_worker/?');?>", {
-      theme: "facebook"
-    });
-});
+  $(document).ready(function () {
+      $("#cari-worker").tokenInput("<?php echo site_url('watcher/manage_sppd/get_worker/?');?>", {
+        theme: "facebook"
+      });
+  });
 </script>
+<?php } ?>
     <!-- jQuery UI -->
 <script type="text/javascript">
   
