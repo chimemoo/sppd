@@ -8,10 +8,12 @@
 					'code' => 'manage_partisipant',
 					'title' => 'Management Partisipant',
 					'menu' => [
+						'admin/manage_partisipant/manage_user'=>'Master Leader & Watcher',
 						'admin/manage_partisipant/manage_worker'=>'Master Worker',
 						'admin/manage_partisipant/manage_vendor' => 'Master Vendor'
 					]
 				],
+
 				[
 					'code' => 'manage_information',
 					'title' => 'Management Information',
@@ -19,6 +21,15 @@
 						'admin/manage_information/manage_function'=>'Master Function',
 						'admin/manage_information/manage_golongan'=>'Master Golongan',
 						'admin/manage_information/manage_tarif'=>'Master Tarif'
+					]
+				],
+
+				[
+					'code' => 'manage_sppd',
+					'title' => 'Management SPPD',
+					'menu' => [
+						'admin/manage_partisipant/create_sppd'=>'Buat SPPD',
+						'admin/manage_partisipant/list_sppd' => 'Daftar Pengajuan'
 					]
 				]
 			]
@@ -31,7 +42,7 @@
 					'code' => 'manage_partisipant',
 					'title' => 'Management Partisipant',
 					'menu' => [
-						'superadmin/manage_partisipant/manage_user'=>'Master User',
+						'superadmin/manage_partisipant/manage_user'=>'Master Admin',
 						'superadmin/manage_partisipant/manage_worker'=>'Master Worker',
 						'superadmin/manage_partisipant/manage_vendor' => 'Master Vendor'
 					]
@@ -55,7 +66,7 @@
 					'title' => 'Management SPPD',
 					'menu' => [
 						'watcher/manage_sppd/create_sppd'=>'Buat SPPD',
-						'warcher/manage_sppd/list_sppd' => 'Daftar Pengajuan'
+						'watcher/manage_sppd/list_sppd' => 'Daftar Pengajuan'
 					]
 				]
 			]
@@ -67,10 +78,10 @@
     <header class="main-header">
 		<!-- Logo -->
 		<a href="index2.html" class="logo">
-			<!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini">SPPD</span>
-			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg">SPPD</b></span>
+		  <!-- mini logo for sidebar mini 50x50 pixels -->
+	      <span class="logo-mini"><b>S</b>PPD</span>
+	      <!-- logo for regular state and mobile devices -->
+	      <span class="logo-lg"><b>SPPD</b> PERTAMINA</span>
 		</a>
 		<nav class="navbar navbar-static-top">
 			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">

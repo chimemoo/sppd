@@ -8,6 +8,7 @@
 					'code' => 'manage_partisipant',
 					'title' => 'Management Partisipant',
 					'menu' => [
+						'admin/manage_partisipant/manage_user'=>'Master User',
 						'admin/manage_partisipant/manage_worker'=>'Master Worker',
 						'admin/manage_partisipant/manage_vendor' => 'Master Vendor'
 					]
@@ -19,6 +20,15 @@
 						'admin/manage_information/manage_function'=>'Master Function',
 						'admin/manage_information/manage_golongan'=>'Master Golongan',
 						'admin/manage_information/manage_tarif'=>'Master Tarif'
+					]
+				],
+				
+				[
+					'code' => 'manage_sppd',
+					'title' => 'Management SPPD',
+					'menu' => [
+						'admin/manage_partisipant/create_sppd'=>'Buat SPPD',
+						'admin/manage_partisipant/list_sppd' => 'Daftar Pengajuan'
 					]
 				]
 			]

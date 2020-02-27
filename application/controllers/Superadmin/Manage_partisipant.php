@@ -50,6 +50,8 @@ class Manage_partisipant extends CI_Controller {
                 ->display_as('emusrmsusr','Email')
                 ->display_as('hpusrmsusr','No Telp');
         $crud->set_subject('User');
+        $where = "msusr.lvusrmsusr='admin'";
+        $crud->where($where);
         $crud->set_relation('fcusrmsusr','msfnc','nmfncmsfnc');
         $crud->set_relation('ldusrmsusr','msusr','nmusrmsusr', array('lvusrmsusr' => 'leader'));
         $crud->set_rules('unusrmsusr','Username','required|is_unique[msusr.unusrmsusr]',array('is_unique' => 'The username is already exist'));
@@ -57,6 +59,7 @@ class Manage_partisipant extends CI_Controller {
         $crud->set_rules('nmusrmsusr','Nama lengkap','required');
         $crud->set_rules('lvusrmsusr','Level','required');
         $crud->set_rules('emusrmsusr','Email','valid_email');
+        $crud->field_type('lvusrmsusr','dropdown', array('leader'=>'admin'));
         $crud->set_rules('hpusrmsusr','Nomor Hp','numeric');
         $crud->unique_fields(array('emusrmsusr'));
         $crud->change_field_type('pwusrmsusr','password')

@@ -44,7 +44,7 @@ class Auth extends MY_Controller {
           }
           else if ($this->session->userdata('role') == 'admin') 
           {
-            redirect('admin/manage_partisipant/manage_worker'); // Redirect ke halaman home
+            redirect('admin/manage_partisipant/manage_user'); // Redirect ke halaman home
           }
           else if ($this->session->userdata('role') == 'watcher') 
           {

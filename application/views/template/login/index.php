@@ -29,7 +29,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <img src="<?php echo base_url();?>assets/image/logo/pertamina.png" style="max-width:150px;"/>
+    <h1><b>SPPD PERTAMINA</b></h1>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

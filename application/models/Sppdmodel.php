@@ -64,6 +64,15 @@ class Sppdmodel extends CI_Model {
 	  return $query->result();
   }
 
+  function get_datatables_admin()
+  {
+    $this->_get_datatables_query();
+    if($_POST['length'] != -1)
+    $this->db->limit($_POST['length'], $_POST['start']);
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   function count_filtered($username)
   {
       $this->_get_datatables_query();
