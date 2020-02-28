@@ -79,7 +79,7 @@
                                             <?php
                                                 foreach ($tarif as $tf){
                                             ?>
-                                                <option value="<?php echo $tf['idtrfmstrf'] ?>"><?php echo $tf['jktrfmstrf'].' Km - '.$tf['sttrfmstrf'].'-'.$tf['dttrfmstrf'].'(Rp.'.$tf['tftrfmstrf'].')'; ?></option>
+                                                <option <?php if($sppd_detail[0]['tfspdmsspd'] == $tf['idtrfmstrf']){ echo 'selected'; }?> value="<?php echo $tf['idtrfmstrf'] ?>"><?php echo $tf['jktrfmstrf'].' Km - '.$tf['sttrfmstrf'].'-'.$tf['dttrfmstrf'].'(Rp.'.$tf['tftrfmstrf'].')'; ?></option>
                                             <?php
                                                 }
                                             ?>
@@ -88,7 +88,7 @@
                                 </tr>
                                 <th>Amount</th>
                                     <td>
-                                        <input type="text" name="amspdmsspd" class="form-control">
+                                        <input type="text" name="amspdmsspd" class="form-control" value="<?php echo $sppd_detail[0]['amspdmsspd']; ?>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -98,7 +98,8 @@
                                 <!-- End of hidden inputs -->
                         
                         <div class="box-footer">
-                            <input type="submit" value="Approve" class="btn btn-success">
+                            <input type="submit" value="Approve" name="approve" class="btn btn-success">
+                            <input type="submit" value="Decline" name="approve" class="btn btn-danger">
                             <a class="btn btn-warning" id="cancel-button" href="<?php echo base_url('leader/manage_sppd/manage_sppd'); ?>">Cancel</a>
                         </div>
                     </form>

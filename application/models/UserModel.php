@@ -69,6 +69,13 @@ class UserModel extends CI_Model {
         $this->db->set('tfspdmsspd', $data['tfspdmsspd']);
         $this->db->set('amspdmsspd', $data['amspdmsspd']);
         $this->db->set('stspdmsspd', $data['stspdmsspd']);
+        $this->db->set('atspdmsspd', $data['atspdmsspd']);
+        $this->db->where('nospdmsspd',$id);
+        return $this->db->update('msspd');
+    }
+
+    function decline($data,$id){
+        $this->db->set('stspdmsspd', 'Ditolak');
         $this->db->where('nospdmsspd',$id);
         return $this->db->update('msspd');
     }

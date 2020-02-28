@@ -87,10 +87,18 @@ class Manage_sppd extends CI_Controller {
         $data = [
             'tfspdmsspd' => $this->input->post('tfspdmssdp'),
             'amspdmsspd' => $this->input->post('amspdmsspd'),
-            'stspdmsspd' => 'Sudah'
+            'stspdmsspd' => 'Sudah',
+            'atspdmsspd' => date('Y-m-d H:i:s')
         ];
-        if($this->usermodel->approve($data,$id)){
-            redirect(base_url('leader/manage_sppd/manage_sppd'));
+        if($this->input->post('approve') == 'Approve'){
+            if($this->usermodel->approve($data,$id)){
+                redirect(base_url('leader/manage_sppd/manage_sppd'));
+            }
+        }
+        else {
+            if($this->usermodel->decline($data,$id)){
+                redirect(base_url('leader/manage_sppd/manage_sppd'));
+            }
         }
     }
 

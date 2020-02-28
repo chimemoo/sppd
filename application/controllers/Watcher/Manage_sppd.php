@@ -45,6 +45,7 @@ class Manage_sppd extends CI_Controller {
     function create_sppd_process(){
         if($this->check_worker($this->input->post())){
             $data = $this->input->post();
+            $data['ptspdmsspd'] = date('Y-m-d H:i:s');
             $data['wcspdmsspd'] = $this->session->username;
             $this->usermodel->add_sppd($data);
             redirect(base_url('watcher/manage_sppd/list_sppd'));
