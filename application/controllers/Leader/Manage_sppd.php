@@ -42,7 +42,7 @@ class Manage_sppd extends CI_Controller {
         ->display_as('rsspdmsspd','Reason')
         ->display_as('wwspdmsspd','Work/Week')
         ->display_as('tfspdmssdp','Tarif')
-        ->display_as('amspdmsspd','Amound');
+        ->display_as('amspdmsspd','Amount');
         
         $crud->set_subject('Management SPPD');
         $crud->callback_read_field('wkspdmsspd',array($this,'getWorker'));

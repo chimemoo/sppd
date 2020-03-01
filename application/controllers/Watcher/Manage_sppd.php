@@ -81,7 +81,6 @@ class Manage_sppd extends CI_Controller {
             $row[] = $field->vdspdmsspd;
             $row[] = $field->dsspdmsspd;
             $row[] = '
-                        <a class="btn btn-sm btn-success m-1" href="'.base_url('watcher/manage_sppd/edit_sppd').$field->nospdmsspd.'"><i class="fa fa-pencil"></i></a>
                         <a class="btn btn-sm btn-danger m-1" href="javascript:void(0)" title="Hapus" onclick="deleteSPPD('."'".$field->nospdmsspd."'".')"><i class="fa fa-trash"></i></a>
                 ';
             $data[] = $row;
